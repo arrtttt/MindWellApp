@@ -26,46 +26,21 @@ final ThemeData mindWellTheme = ThemeData(
     ),
   ),
 
-  textTheme: const TextTheme(
-    bodyLarge: TextStyle(fontSize: 20.0),
-    bodyMedium: TextStyle(fontSize: 16.0),
-    bodySmall: TextStyle(fontSize: 12.0),
-    displayLarge: TextStyle(fontSize: 20.0),
-    displayMedium: TextStyle(fontSize: 16.0),
-    displaySmall: TextStyle(fontSize: 12.0),
-    headlineLarge: TextStyle(fontSize: 20.0, color: Colors.white),
-    headlineMedium: TextStyle(fontSize: 16.0, color: Colors.white),
-    headlineSmall: TextStyle(fontSize: 12.0, color: Colors.white),
-    labelLarge: TextStyle(
-      fontSize: 20.0,
-    ),
-    labelMedium: TextStyle(fontSize: 16.0),
-    labelSmall: TextStyle(fontSize: 12.0),
-    titleLarge: TextStyle(
-        fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.white),
-    titleMedium: TextStyle(
-        fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white),
-    titleSmall: TextStyle(
-        fontSize: 12.0, fontWeight: FontWeight.bold, color: Colors.white),
-  ),
-
   appBarTheme: const AppBarTheme(
     backgroundColor: mindWellPrimaryColor,
     titleTextStyle: TextStyle(
       fontSize: 20.0,
       fontWeight: FontWeight.bold,
     ),
+    iconTheme: IconThemeData(
+      color: Colors.white,
+    ),
   ),
 
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
       backgroundColor: MaterialStateProperty.all<Color>(mindWellPrimaryColor),
-      textStyle: MaterialStateProperty.all<TextStyle>(
-        const TextStyle(
-          fontSize: 16.0,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+      foregroundColor: const MaterialStatePropertyAll(Colors.white),
     ),
   ),
 
