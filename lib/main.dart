@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/screens/profile_screen.dart';
-import 'package:mindwell/screens/settings_screen.dart';
+import 'package:mindwell/routes/app_routes.dart';
+import 'package:mindwell/routes/routes.dart';
 import 'package:mindwell/utils/theme.dart';
 
 void main() {
@@ -14,25 +14,37 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {
-        '/profile': (BuildContext context) => const ProfileScreen(),
-        '/settings': (BuildContext context) => const SettingsScreen(),
-      },
+      initialRoute: Routes.inicio,
+      routes: appRoutes,
       theme: mindWellTheme,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('MindWell'),
-        ),
-        body: Center(
-          child: Builder(
-            builder: (BuildContext context) => ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/profile');
-                },
-                child: const Text('Press me!')),
+          appBar: AppBar(
+            title: const Text('MindWell'),
           ),
-        ),
-      ),
+          body: Builder(builder: (context) {
+            return Column(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/settings');
+                  },
+                  child: const Text('Settings'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/chat');
+                  },
+                  child: const Text('Chat'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/psico_profile');
+                  },
+                  child: const Text('Psicologo Profile'),
+                ),
+              ],
+            );
+          })),
     );
   }
 }
