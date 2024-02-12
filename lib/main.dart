@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindwell/screens/chat_screen.dart';
 import 'package:mindwell/screens/profile_screen.dart';
 import 'package:mindwell/screens/settings_screen.dart';
 import 'package:mindwell/utils/theme.dart';
@@ -17,22 +18,31 @@ class MyApp extends StatelessWidget {
       routes: {
         '/profile': (BuildContext context) => const ProfileScreen(),
         '/settings': (BuildContext context) => const SettingsScreen(),
+        '/chat': (BuildContext context) => const ChatScreen(),
       },
       theme: mindWellTheme,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('MindWell'),
-        ),
-        body: Center(
-          child: Builder(
-            builder: (BuildContext context) => ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/settings');
-                },
-                child: const Text('Press me!')),
+          appBar: AppBar(
+            title: const Text('MindWell'),
           ),
-        ),
-      ),
+          body: Builder(builder: (context) {
+            return Column(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/settings');
+                  },
+                  child: const Text('Settings'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/chat');
+                  },
+                  child: const Text('Chat'),
+                ),
+              ],
+            );
+          })),
     );
   }
 }
