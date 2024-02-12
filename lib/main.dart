@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:MindWell/screens/profile_screen.dart';
-import 'package:MindWell/screens/settings_screen.dart';
-import 'package:MindWell/utils/constants.dart';
+import 'package:mindwell/screens/profile_screen.dart';
+import 'package:mindwell/screens/settings_screen.dart';
+import 'package:mindwell/utils/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,11 +26,10 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Builder(
             builder: (BuildContext context) => ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/profile');
-              },
-              child: const Text('Press me!'),
-            ),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/profile');
+                },
+                child: const Text('Press me!')),
           ),
         ),
       ),
