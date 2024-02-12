@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/screens/chat_screen.dart';
 import 'package:mindwell/screens/profile_screen.dart';
+import 'package:mindwell/screens/psico_profile_screen.dart';
 import 'package:mindwell/screens/settings_screen.dart';
 import 'package:mindwell/utils/theme.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/profile': (BuildContext context) => const ProfileScreen(),
         '/settings': (BuildContext context) => const SettingsScreen(),
+        '/psico_profile': (BuildContext context) => const PsicoProfileScreen(),
         '/chat': (BuildContext context) => const ChatScreen(),
       },
       theme: mindWellTheme,
@@ -39,6 +41,12 @@ class MyApp extends StatelessWidget {
                     Navigator.pushNamed(context, '/chat');
                   },
                   child: const Text('Chat'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/psico_profile');
+                  },
+                  child: const Text('Psicologo Profile'),
                 ),
               ],
             );

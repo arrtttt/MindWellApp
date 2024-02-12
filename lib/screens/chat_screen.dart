@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindwell/utils/theme.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key});
@@ -15,6 +16,31 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Chat'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.exit_to_app_rounded),
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      backgroundColor: lightColorScheme.onPrimary,
+                      title: const Text('Terminar chat'),
+                      content: const Text(
+                          '¿Estas seguro de que quieres terminar el chat? Esperamos que hayas podido recibir la ayuda que necesitabas'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Center(child: Text('Terminar chat')),
+                        ),
+                      ],
+                    );
+                  });
+            },
+          )
+        ],
       ),
       body: Column(
         children: [
