@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           child: Builder(
             builder: (BuildContext context) => ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/profile');
+                  Navigator.pushNamed(context, '/settings');
                 },
                 child: const Text('Press me!')),
           ),
