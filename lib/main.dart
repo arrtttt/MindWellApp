@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/screens/chat_screen.dart';
-import 'package:mindwell/screens/profile_screen.dart';
-import 'package:mindwell/screens/psico_profile_screen.dart';
-import 'package:mindwell/screens/settings_screen.dart';
+import 'package:mindwell/routes/app_routes.dart';
+import 'package:mindwell/routes/routes.dart';
 import 'package:mindwell/utils/theme.dart';
 
 void main() {
@@ -16,12 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {
-        '/profile': (BuildContext context) => const ProfileScreen(),
-        '/settings': (BuildContext context) => const SettingsScreen(),
-        '/psico_profile': (BuildContext context) => const PsicoProfileScreen(),
-        '/chat': (BuildContext context) => const ChatScreen(),
-      },
+      initialRoute: Routes.inicio,
+      routes: appRoutes,
       theme: mindWellTheme,
       home: Scaffold(
           appBar: AppBar(
