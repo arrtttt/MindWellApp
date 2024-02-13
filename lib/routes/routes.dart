@@ -16,4 +16,5 @@ class Routes {
   static const String chatRoomPsico = '/chatRoomPsico';
   static const String chatRoomListUser = '/chatRoomListUser';
   static const String psicoList = '/psicoList';
+  static const String information = '/information';
 }

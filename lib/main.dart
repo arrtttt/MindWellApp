@@ -60,6 +60,12 @@ class MyApp extends StatelessWidget {
                   },
                   child: const Text('Psicologos Disponibles'),
                 ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/information');
+                  },
+                  child: const Text('Information'),
+                ),
               ],
             );
           })),

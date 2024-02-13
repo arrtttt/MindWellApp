@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/screens/chat_screen.dart';
+import 'package:mindwell/screens/information_screen.dart';
 import 'package:mindwell/screens/login/login_screen.dart';
 import 'package:mindwell/screens/profile_screen.dart';
 import 'package:mindwell/screens/psico_avalible_screen.dart';
@@ -15,4 +16,5 @@ Map<String, WidgetBuilder> appRoutes = {
   '/login': (BuildContext context) => const LoginScreen(),
   '/register': (BuildContext context) => const RegisterScreen(),
   '/psicoList': (BuildContext context) => const PsicoAvalibleScreen(),
+  '/information': (BuildContext context) => const InformationPage(),
 };
