@@ -11,9 +11,7 @@ class ProfileScreen extends StatelessWidget {
           title: const Text('Mi perfil'),
           actions: [
             IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/settings');
-              },
+              onPressed: () {},
               icon: const Icon(Icons.edit),
             )
           ],
