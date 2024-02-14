@@ -15,4 +15,10 @@ class Routes {
   static const String chatRoomListPsico = '/chatRoomListPsico';
   static const String chatRoomPsico = '/chatRoomPsico';
   static const String chatRoomListUser = '/chatRoomListUser';
+  static const String psicoList = '/psicoList';
+  static const String information = '/information';
+  static const String notificationSettings = '/notification_settings';
+  static const String languageSettings = '/language_settings';
+  static const String privacySettings = '/privacy_settings';
+  static const String help = '/help';
 }
