@@ -56,5 +56,12 @@ final ThemeData mindWellTheme = ThemeData(
             TextStyle(color: lightColorScheme.onPrimary),
           ))),
 
-  //ListTileTheme
+  //TabBarTheme
+  tabBarTheme: TabBarTheme(
+    labelColor: lightColorScheme.onPrimary,
+    unselectedLabelColor: lightColorScheme.onPrimary,
+    indicator: BoxDecoration(
+      color: lightColorScheme.primary,
+    ),
+  ),
 );
