@@ -12,7 +12,6 @@ import 'package:mindwell/screens/setting/language_settings_screen.dart';
 import 'package:mindwell/screens/setting/notification_settings_screen.dart';
 import 'package:mindwell/screens/setting/privacy_settings_screen.dart';
 import 'package:mindwell/screens/settings_screen.dart';
-import 'package:mindwell/screens/Listado.dart';
 
 Map<String, WidgetBuilder> appRoutes = {
   '/home': (BuildContext context) => const MyApp(),
@@ -30,5 +29,4 @@ Map<String, WidgetBuilder> appRoutes = {
       const LanguageSettingsScreen(),
   '/privacy_settings': (BuildContext context) => const PrivacySettingsScreen(),
   '/help': (BuildContext context) => const HelpSettingsScreen(),
-  '/list': (BuildContext context) => const ListadoWidget()
 };
