@@ -1,3 +1,4 @@
+import 'package:mindwell/main.dart';
 import 'package:flutter/material.dart';
 import 'package:mindwell/screens/chat_screen.dart';
 import 'package:mindwell/screens/information_screen.dart';
@@ -11,8 +12,10 @@ import 'package:mindwell/screens/setting/language_settings_screen.dart';
 import 'package:mindwell/screens/setting/notification_settings_screen.dart';
 import 'package:mindwell/screens/setting/privacy_settings_screen.dart';
 import 'package:mindwell/screens/settings_screen.dart';
+import 'package:mindwell/screens/Listado.dart';
 
 Map<String, WidgetBuilder> appRoutes = {
+  '/home': (BuildContext context) => const MyApp(),
   '/profile': (BuildContext context) => const ProfileScreen(),
   '/settings': (BuildContext context) => const SettingsScreen(),
   '/psico_profile': (BuildContext context) => const PsicoProfileScreen(),
@@ -27,4 +30,5 @@ Map<String, WidgetBuilder> appRoutes = {
       const LanguageSettingsScreen(),
   '/privacy_settings': (BuildContext context) => const PrivacySettingsScreen(),
   '/help': (BuildContext context) => const HelpSettingsScreen(),
+  '/list': (BuildContext context) => const ListadoWidget()
 };

@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/psicoList');
+                    Navigator.pushNamed(context, '/list');
                   },
                   child: const Text('Psicologos Disponibles'),
                 ),
