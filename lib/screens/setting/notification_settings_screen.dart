@@ -10,26 +10,36 @@ class NotificacionSettingsScreen extends StatelessWidget {
         title: const Text('Configuración de notificaciones'),
       ),
       body: ListView(
-        children: const [
-          ListTile(
-            title: Text('Notificaciones push'),
-            leading: Icon(Icons.notifications),
+        children: [
+          SwitchListTile(
+            title: const Text('Notificaciones push'),
+            value: true,
+            secondary: const Icon(Icons.notifications),
+            onChanged: (value) {},
+          ),
+          SwitchListTile(
+            title: const Text('Notificaciones por correo electrónico'),
+            value: false,
+            secondary: const Icon(Icons.email),
+            onChanged: (value) {},
+          ),
+          SwitchListTile(
+            title: const Text('Notificaciones emergentes'),
+            value: true,
+            secondary: const Icon(Icons.message),
+            onChanged: (value) {},
           ),
           ListTile(
-            title: Text('Notificaciones por correo electrónico'),
-            leading: Icon(Icons.email),
+            title: const Text('Frecuencia de notificaciones'),
+            subtitle: const Text('Diaria'),
+            leading: const Icon(Icons.access_time),
+            onTap: () {},
           ),
           ListTile(
-            title: Text('Opción 3'),
-            leading: Icon(Icons.notification_important),
-          ),
-          ListTile(
-            title: Text('Opción 4'),
-            leading: Icon(Icons.notifications_active),
-          ),
-          ListTile(
-            title: Text('Opción 5'),
-            leading: Icon(Icons.notifications_off),
+            title: const Text('Sonido de notificaciones'),
+            subtitle: const Text('Predeterminado'),
+            leading: const Icon(Icons.volume_up),
+            onTap: () {},
           ),
         ],
       ),

@@ -10,26 +10,32 @@ class PrivacySettingsScreen extends StatelessWidget {
         title: const Text('Configuración de privacidad'),
       ),
       body: ListView(
-        children: const [
-          ListTile(
-            title: Text('Control de cookies y seguimiento'),
-            leading: Icon(Icons.cookie),
+        children: [
+          SwitchListTile(
+            title: const Text('Control de cookies y seguimiento'),
+            value: true,
+            secondary: const Icon(Icons.cookie),
+            onChanged: (value) {},
           ),
-          ListTile(
-            title: Text('Notificaciones de privacidad'),
-            leading: Icon(Icons.notifications_active),
+          SwitchListTile(
+            title: const Text('Notificaciones de privacidad'),
+            value: false,
+            secondary: const Icon(Icons.notifications_active),
+            onChanged: (value) {},
           ),
-          ListTile(
-            title: Text('Eliminación de datos'),
-            leading: Icon(Icons.delete),
-          ),
-          ListTile(
+          const ListTile(
             title: Text('Seguridad de la cuenta'),
             leading: Icon(Icons.security),
           ),
-          ListTile(
-            title: Text('Compartir datos con terceros'),
-            leading: Icon(Icons.share),
+          SwitchListTile(
+            title: const Text('Compartir datos con terceros'),
+            value: true,
+            secondary: const Icon(Icons.share),
+            onChanged: (value) {},
+          ),
+          const ListTile(
+            title: Text('Eliminar cuenta'),
+            leading: Icon(Icons.delete),
           ),
         ],
       ),
