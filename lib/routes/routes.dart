@@ -21,4 +21,6 @@ class Routes {
   static const String languageSettings = '/language_settings';
   static const String privacySettings = '/privacy_settings';
   static const String help = '/help';
+  static const String listaPsi = '/lispsi';
+  static const String detapsi = '/detapsi';
 }

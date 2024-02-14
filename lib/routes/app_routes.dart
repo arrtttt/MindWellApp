@@ -11,6 +11,8 @@ import 'package:mindwell/screens/setting/language_settings_screen.dart';
 import 'package:mindwell/screens/setting/notification_settings_screen.dart';
 import 'package:mindwell/screens/setting/privacy_settings_screen.dart';
 import 'package:mindwell/screens/settings_screen.dart';
+import 'package:mindwell/screens/Listado.dart';
+import 'package:mindwell/screens/detalles_psicologo_widget.dart';
 
 Map<String, WidgetBuilder> appRoutes = {
   '/profile': (BuildContext context) => const ProfileScreen(),
@@ -27,4 +29,6 @@ Map<String, WidgetBuilder> appRoutes = {
       const LanguageSettingsScreen(),
   '/privacy_settings': (BuildContext context) => const PrivacySettingsScreen(),
   '/help': (BuildContext context) => const HelpSettingsScreen(),
+  '/lispsi': (BuildContext context) => const ListadoWidget(),
+  '/detapsi': (BuildContext context) => const DetallesPsicologoWidget()
 };
