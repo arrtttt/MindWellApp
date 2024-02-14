@@ -20,25 +20,33 @@ class SettingsScreen extends StatelessWidget {
                   Navigator.pushNamed(context, '/profile');
                 },
               ),
-              const ListTile(
-                title: Text('Notificaciones'),
-                leading: Icon(Icons.notifications),
+              ListTile(
+                title: const Text('Notificaciones'),
+                leading: const Icon(Icons.notifications),
+                onTap: () {
+                  Navigator.pushNamed(context, '/notification_settings');
+                },
               ),
-              const ListTile(
-                title: Text('Idioma'),
-                leading: Icon(Icons.language),
+              ListTile(
+                title: const Text('Idioma'),
+                leading: const Icon(Icons.language),
+                onTap: () {
+                  Navigator.pushNamed(context, '/language_settings');
+                },
               ),
-              const ListTile(
-                title: Text('Tema'),
-                leading: Icon(Icons.color_lens),
+              ListTile(
+                title: const Text('Privacidad'),
+                leading: const Icon(Icons.privacy_tip),
+                onTap: () {
+                  Navigator.pushNamed(context, '/privacy_settings');
+                },
               ),
-              const ListTile(
-                title: Text('Privacidad'),
-                leading: Icon(Icons.privacy_tip),
-              ),
-              const ListTile(
-                title: Text('Ayuda'),
-                leading: Icon(Icons.help),
+              ListTile(
+                title: const Text('Ayuda'),
+                leading: const Icon(Icons.help),
+                onTap: () {
+                  Navigator.pushNamed(context, '/help');
+                },
               ),
               const ListTile(
                 title: Text('Cerrar sesión'),
