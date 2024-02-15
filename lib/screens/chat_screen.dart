@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_gemini/google_gemini.dart';
 import 'package:mindwell/utils/theme.dart';
+
+const apiKey = "AIzaSyB_fA3_fymQPxkAP6Yn5JBFyknCn24o12s";
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key});
@@ -9,7 +12,54 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  bool loading = false;
+  List textChat = [];
+  List textWithImageChat = [];
+
   final TextEditingController _textController = TextEditingController();
+  final ScrollController _controller = ScrollController();
+
+  //Gemini Api Key
+  final gemini = GoogleGemini(
+    apiKey: apiKey,
+  );
+
+  // Text only input
+  void fromText({required String query}) {
+    setState(() {
+      loading = true;
+      textChat.add({
+        "role": "User",
+        "text": query,
+      });
+      _textController.clear();
+    });
+    scrollToTheEnd();
+
+    gemini.generateFromText(query).then((value) {
+      setState(() {
+        loading = false;
+        textChat.add({
+          "role": "Gemini",
+          "text": value.text,
+        });
+      });
+      scrollToTheEnd();
+    }).onError((error, stackTrace) {
+      setState(() {
+        loading = false;
+        textChat.add({
+          "role": "Gemini",
+          "text": error.toString(),
+        });
+      });
+      scrollToTheEnd();
+    });
+  }
+
+  void scrollToTheEnd() {
+    _controller.jumpTo(_controller.position.maxScrollExtent);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,74 +95,57 @@ class _ChatScreenState extends State<ChatScreen> {
       body: Column(
         children: [
           Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  _buildChatMessage(
-                    sender: 'John Doe',
-                    text: 'Hey, how are you?',
+            child: ListView.builder(
+              controller: _controller,
+              itemCount: textChat.length,
+              padding: const EdgeInsets.only(bottom: 20),
+              itemBuilder: (context, index) {
+                return ListTile(
+                  isThreeLine: true,
+                  leading: CircleAvatar(
+                    child: Text(textChat[index]["role"].substring(0, 1)),
                   ),
-                  _buildChatMessage(
-                    sender: 'Jane Doe',
-                    text: 'I am doing great!',
-                  ),
-                  _buildChatMessage(
-                    sender: 'John Doe',
-                    text: 'I am glad to hear that!',
-                  ),
-                  _buildChatMessage(
-                    sender: 'Jane Doe',
-                    text: 'How about you?',
-                  ),
-                  _buildChatMessage(
-                    sender: 'John Doe',
-                    text: 'I am doing great too!',
-                  ),
-                  _buildChatMessage(
-                      sender: 'John Doe', text: 'Iam going back to 505'),
-                  _buildChatMessage(
-                      sender: 'John Doe',
-                      text: 'But i crumble completely when you cry'),
-                  _buildChatMessage(
-                      sender: 'John Doe',
-                      text:
-                          'It seems like once again you had to greet me with goodbye'),
-                  _buildChatMessage(
-                      sender: 'John Doe',
-                      text:
-                          'I am always just about to go and spoil a surprise'),
-                  _buildChatMessage(
-                      sender: 'John Doe',
-                      text: 'Take my hands off of your eyes too soon'),
-                  _buildChatMessage(
-                      sender: 'John Doe', text: 'I am going back to 505'),
-                ],
-              ),
+                  title: Text(textChat[index]["role"]),
+                  subtitle: Text(textChat[index]["text"]),
+                );
+              },
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          Container(
+            alignment: Alignment.bottomRight,
+            margin: const EdgeInsets.all(20),
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              border: Border.all(color: Colors.grey),
+            ),
             child: Row(
               children: [
                 Expanded(
                   child: TextField(
                     controller: _textController,
-                    decoration: const InputDecoration(
-                      hintText: 'Type a message...',
+                    decoration: InputDecoration(
+                      hintText: "Type a message",
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide.none),
+                      fillColor: Colors.transparent,
                     ),
+                    maxLines: null,
+                    keyboardType: TextInputType.multiline,
                   ),
                 ),
                 IconButton(
+                  icon: loading
+                      ? const CircularProgressIndicator()
+                      : const Icon(Icons.send),
                   onPressed: () {
-                    // Action to send message
-                    _sendMessage();
+                    fromText(query: _textController.text);
                   },
-                  icon: const Icon(Icons.send),
                 ),
               ],
             ),
-          ),
+          )
         ],
       ),
     );
