@@ -16,61 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.inicio,
+      initialRoute: Routes.home,
       routes: appRoutes,
       theme: mindWellTheme,
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('MindWell'),
-          ),
-          body: Builder(builder: (context) {
-            return Column(
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/settings');
-                  },
-                  child: const Text('Settings'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/chat');
-                  },
-                  child: const Text('Chat'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/psico_profile');
-                  },
-                  child: const Text('Psicologo Profile'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/login');
-                  },
-                  child: const Text('Login'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/register');
-                  },
-                  child: const Text('Register'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/list');
-                  },
-                  child: const Text('Psicologos Disponibles'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/information');
-                  },
-                  child: const Text('Information'),
-                ),
-              ],
-            );
-          })),
     );
   }
 }

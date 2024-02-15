@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: non_constant_identifier_names
-Widget TextSectionV1(String title, String text) {
+Widget textSectionV1(String title, String text) {
   return Column(
     children: [
       Padding(
@@ -26,7 +26,7 @@ Widget TextSectionV1(String title, String text) {
   );
 }
 
-Widget TextSectionV2(String title, String subtitle, String text, String price) {
+Widget textSectionV2(String title, String subtitle, String text, String price) {
   return ListView(
     children: [
       Padding(
