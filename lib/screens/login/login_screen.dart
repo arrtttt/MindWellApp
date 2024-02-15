@@ -49,12 +49,8 @@ class LoginScreen extends StatelessWidget {
                     mainAxisSize: MainAxisSize
                         .min, // Permite que el botón se adapte al contenido
                     children: [
-                      Image.asset('assets/images/key.png',
-                          scale:
-                              25), // Asegúrate de tener la imagen en la ubicación correcta
-                      const SizedBox(
-                          width:
-                              8), // Agrega un espacio entre la imagen y el texto
+                      Image.asset('assets/images/key.png', scale: 25),
+                      const SizedBox(width: 8),
                       const Text('Iniciar Sesión con cuenta de organización'),
                     ],
                   ),
@@ -63,7 +59,6 @@ class LoginScreen extends StatelessWidget {
                 TextButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/register');
-                    // Aquí puedes agregar la lógica para redirigir al usuario a la pantalla de registro
                   },
                   child: const Text('¿No tienes una cuenta? Regístrate'),
                 ),

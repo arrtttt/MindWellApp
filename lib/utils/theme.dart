@@ -49,10 +49,19 @@ final ThemeData mindWellTheme = ThemeData(
           backgroundColor: MaterialStateProperty.all(lightColorScheme.primary),
           foregroundColor:
               MaterialStateProperty.all(lightColorScheme.onPrimary),
+          overlayColor:
+              MaterialStatePropertyAll(lightColorScheme.onPrimaryContainer),
           elevation: MaterialStateProperty.all(5),
           textStyle: MaterialStateProperty.all(
             TextStyle(color: lightColorScheme.onPrimary),
           ))),
 
-  //ListTileTheme
+  //TabBarTheme
+  tabBarTheme: TabBarTheme(
+    labelColor: lightColorScheme.onPrimary,
+    unselectedLabelColor: lightColorScheme.onPrimary,
+    indicator: BoxDecoration(
+      color: lightColorScheme.primary,
+    ),
+  ),
 );

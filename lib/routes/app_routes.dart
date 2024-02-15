@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mindwell/screens/chat_screen.dart';
+import 'package:mindwell/screens/home_screen.dart';
 import 'package:mindwell/screens/information_screen.dart';
+import 'package:mindwell/screens/init_screen.dart';
 import 'package:mindwell/screens/login/login_screen.dart';
 import 'package:mindwell/screens/profile_screen.dart';
 import 'package:mindwell/screens/psico_avalible_screen.dart';
@@ -13,6 +15,8 @@ import 'package:mindwell/screens/setting/privacy_settings_screen.dart';
 import 'package:mindwell/screens/settings_screen.dart';
 
 Map<String, WidgetBuilder> appRoutes = {
+  '/home': (BuildContext context) => const HomeScreen(),
+  '/inicio': (BuildContext context) => const InitScreen(),
   '/profile': (BuildContext context) => const ProfileScreen(),
   '/settings': (BuildContext context) => const SettingsScreen(),
   '/psico_profile': (BuildContext context) => const PsicoProfileScreen(),
