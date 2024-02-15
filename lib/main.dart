@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mindwell/routes/app_routes.dart';
 import 'package:mindwell/routes/routes.dart';
 import 'utils/theme.dart';
-import 'package:dart_openai/dart_openai.dart';
 
 void main() {
-  OpenAI.apiKey = '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';
   runApp(const MyApp());
 }
 
