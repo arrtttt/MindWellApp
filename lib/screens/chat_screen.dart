@@ -40,7 +40,7 @@ class _ChatScreenState extends State<ChatScreen> {
       setState(() {
         loading = false;
         textChat.add({
-          "role": "Gemini",
+          "role": "Joi",
           "text": value.text,
         });
       });
@@ -49,7 +49,7 @@ class _ChatScreenState extends State<ChatScreen> {
       setState(() {
         loading = false;
         textChat.add({
-          "role": "Gemini",
+          "role": "Joi",
           "text": error.toString(),
         });
       });
