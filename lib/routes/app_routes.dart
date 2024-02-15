@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/screens/chat_screen.dart';
+import 'package:mindwell/screens/chats/chat_screenAI.dart';
+import 'package:mindwell/screens/chats/chat_screen.dart';
 import 'package:mindwell/screens/home_screen.dart';
 import 'package:mindwell/screens/information_screen.dart';
 import 'package:mindwell/screens/init_screen.dart';
 import 'package:mindwell/screens/login/login_screen.dart';
-import 'package:mindwell/screens/profile_screen.dart';
+import 'package:mindwell/screens/profiles/profile_screen.dart';
+import 'package:mindwell/screens/profiles/psico_profile_screen.dart';
 import 'package:mindwell/screens/psico_avalible_screen.dart';
-import 'package:mindwell/screens/psico_profile_screen.dart';
 import 'package:mindwell/screens/register/register_screen.dart';
 import 'package:mindwell/screens/setting/help_settings_screen.dart';
 import 'package:mindwell/screens/setting/language_settings_screen.dart';
 import 'package:mindwell/screens/setting/notification_settings_screen.dart';
 import 'package:mindwell/screens/setting/privacy_settings_screen.dart';
 import 'package:mindwell/screens/settings_screen.dart';
+import '../screens/chats/chat_room_list.dart';
 
 Map<String, WidgetBuilder> appRoutes = {
   '/home': (BuildContext context) => const HomeScreen(),
@@ -31,4 +33,6 @@ Map<String, WidgetBuilder> appRoutes = {
       const LanguageSettingsScreen(),
   '/privacy_settings': (BuildContext context) => const PrivacySettingsScreen(),
   '/help': (BuildContext context) => const HelpSettingsScreen(),
+  '/chat_list': (BuildContext context) => const ChatRoomList(),
+  '/chat_AI': (BuildContext context) => const ChatScreenAI(),
 };

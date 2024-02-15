@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mindwell/screens/chat_screen.dart';
-
+import 'chats/chat_room_list.dart';
 import 'init_screen.dart';
-import 'profile_screen.dart';
+import 'psico_avalible_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,8 +18,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         body: [
           const InitScreen(),
-          const ChatScreen(),
-          const ProfileScreen(),
+          const ChatRoomList(),
+          const PsicoAvalibleScreen(),
         ][currentPageIndex],
         bottomNavigationBar: NavigationBar(
           destinations: const [
@@ -35,9 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
               selectedIcon: Icon(Icons.chat),
             ),
             NavigationDestination(
-              label: 'Profile',
-              icon: Icon(Icons.person_outline),
-              selectedIcon: Icon(Icons.person),
+              label: 'Organizations',
+              icon: Icon(Icons.corporate_fare_outlined),
+              selectedIcon: Icon(Icons.corporate_fare),
             ),
           ],
           selectedIndex: currentPageIndex,
@@ -46,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
               currentPageIndex = index;
             });
           },
+          animationDuration: const Duration(milliseconds: 300),
         ));
   }
 }

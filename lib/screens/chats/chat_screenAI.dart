@@ -4,14 +4,14 @@ import 'package:mindwell/utils/theme.dart';
 
 const apiKey = "AIzaSyB_fA3_fymQPxkAP6Yn5JBFyknCn24o12s";
 
-class ChatScreen extends StatefulWidget {
-  const ChatScreen({Key? key});
+class ChatScreenAI extends StatefulWidget {
+  const ChatScreenAI({Key? key});
 
   @override
-  State<ChatScreen> createState() => _ChatScreenState();
+  State<ChatScreenAI> createState() => _ChatScreenState();
 }
 
-class _ChatScreenState extends State<ChatScreen> {
+class _ChatScreenState extends State<ChatScreenAI> {
   bool loading = false;
   List textChat = [];
   List textWithImageChat = [];
