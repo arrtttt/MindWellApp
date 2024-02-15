@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mindwell/screens/chats/chat_screenAI.dart';
 import 'package:mindwell/screens/chats/chat_screen.dart';
 import 'package:mindwell/screens/home_screen.dart';
-import 'package:mindwell/screens/information_screen.dart';
+import 'package:mindwell/screens/intro/information_screen.dart';
 import 'package:mindwell/screens/init_screen.dart';
 import 'package:mindwell/screens/login/login_screen.dart';
 import 'package:mindwell/screens/profiles/profile_screen.dart';
@@ -13,7 +13,7 @@ import 'package:mindwell/screens/setting/help_settings_screen.dart';
 import 'package:mindwell/screens/setting/language_settings_screen.dart';
 import 'package:mindwell/screens/setting/notification_settings_screen.dart';
 import 'package:mindwell/screens/setting/privacy_settings_screen.dart';
-import 'package:mindwell/screens/settings_screen.dart';
+import 'package:mindwell/screens/setting/settings_screen.dart';
 import '../screens/chats/chat_room_list.dart';
 
 Map<String, WidgetBuilder> appRoutes = {
